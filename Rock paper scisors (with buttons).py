@@ -11,45 +11,19 @@ def main():
 
    
     while wins < 2 and cpuwins < 2:
-        Choice = simpledialog.askinteger("Choice",
-                                "What is your choice?" +\
-                                " Choose 1 for rock, " +\
-                                " Choose 2 for paper, " +\
-                                " choose 3 for scissors")
+        b1['command']=b1Click
+        b2['command']=b2Click
+        b3['command']=b3Click
 
-        class AllTkinterWidgets:
-            def __init__(self, master):
-                frame = Frame(master, width=500, height=400, bd=1)
-                frame.pack()
+        b1 = Button(None, text="ROCK", command="rock")
+        b1.pack()
 
-                iframe1 = Frame(frame, bd=2, relief=SUNKEN)
-                Button(iframe1, text='ROCK').pack(side=LEFT, padx=5)
+        b2 = Button(None, text="PAPER", command="paper")
+        b2.pack()
 
-                v=IntVar()
-                iframe1.pack(expand=1, fill=X, pady=10, padx=5)
-                
-                frame = Frame(master, width=500, height=400, bd=1)
-                frame.pack()
-
-                iframe1 = Frame(frame, bd=2, relief=SUNKEN)
-                Button(iframe1, text='PAPER').pack(side=LEFT, padx=5)
-
-                v=IntVar()
-                iframe1.pack(expand=1, fill=X, pady=10, padx=5)
-
-                frame = Frame(master, width=500, height=400, bd=1)
-                frame.pack()
-
-                iframe1 = Frame(frame, bd=2, relief=SUNKEN)
-                Button(iframe1, text='SCISSORS').pack(side=LEFT, padx=5)
-
-                v=IntVar()
-                iframe1.pack(expand=1, fill=X, pady=10, padx=5)
-                
-        #root.option_add('*font', ('verdana', 10, 'bold'))
-        all = AllTkinterWidgets(root)
-        root.title('Tkinter Widgets')
-        root.mainloop()
+        b3 = Button(None, text="SCISSORS", command="scissors")
+        b3.pack()
+    
 
         if Choice == "rock":
             Choice = 1
